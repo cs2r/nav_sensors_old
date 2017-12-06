@@ -26,7 +26,7 @@ class display_sensors():
         self.robot = pygame.image.load("robot.png")
         self.robot = pygame.transform.scale(self.robot, (16, 28))
         self.red = (255,0,0)
-        self.screen = pygame.display.set_mode((self.size[0] + self.barSize[0], self.size[1] + 100))
+        self.screen = pygame.display.set_mode((self.size[0] + self.barSize[0], self.size[1] + 0))
         self.screen.blit(self.background, (0, 0))
         self.drow_goal = False
         self.ranges = [[0, 1000],
@@ -140,8 +140,9 @@ class display_sensors():
         return (pos_m[0], pos_m[1], 0.0)
 
 if __name__ == "__main__":
+    maps = display_sensors()
     try:
-        maps = display_sensors()
+
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -153,8 +154,6 @@ if __name__ == "__main__":
                                 maps.set_goal()
                                 pressed = False
                                 maps.get_position()
-
-
 
             time.sleep(0.05)
     except KeyboardInterrupt, rospy.ROSInterruptException:

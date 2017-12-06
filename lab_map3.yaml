@@ -1,4 +1,4 @@
-image: lab_map2.pgm
+image: /home/g108/lab_map3.pgm
 resolution: 0.050000
 origin: [-10.000000, -10.000000, 0.000000]
 negate: 0
